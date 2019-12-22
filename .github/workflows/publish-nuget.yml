@@ -44,9 +44,14 @@ jobs:
           uses: actions/download-artifact@master
           with:
             name: nupkg
+            
+        - name: Setup NuGet
+          uses: NuGet/setup-nuget@v1.0.2
+          with:
+            nuget-version: latest
 
         - name: Setup .NET SDK tools
-          uses: actions/setup-dotnet@v1.3.0
+          uses: actions/setup-dotnet@master
           with:
             dotnet-version: '3.1.100'
             source-url: https://api.nuget.org/v3/index.json
@@ -54,4 +59,4 @@ jobs:
             NUGET_AUTH_TOKEN: ${{ secrets.NUGET_ORG_TOKEN }} 
 
         - name: Push to NuGet.org (using dotnet)
-          run: dotnet nuget push nupkg/*.nupkg -s https://api.nuget.org/v3/index.json
+          run: dotnet nuget push nupkg/*.nupkg -s https://api.nuget.org/v3/index.json --skip-duplicate
