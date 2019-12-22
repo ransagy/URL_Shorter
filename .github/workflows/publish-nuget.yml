@@ -49,6 +49,7 @@ jobs:
           uses: actions/setup-dotnet@v1.3.0
           with:
             dotnet-version: '3.1.100'
+            source-url: ${{ secrets.NUGET_ORG_TOKEN }}
 
         - name: Push to NuGet.org (using dotnet)
           run: dotnet nuget push nupkg/*.nupkg -s ${{ secrets.NUGET_ORG_TOKEN }}
