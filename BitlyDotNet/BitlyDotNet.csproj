@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Description>A (partial) .NET client for the bit.ly URL shortening service's REST APIs. Currently supports querying for groups and shortening URLs on bitly's v4 API using the OAuth access token flow.</Description>
+    <Description>A (partial) .NET client for the bit.ly URL shortening service's REST APIs</Description>
     <VersionPrefix>1.0.0</VersionPrefix>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>ransagy.BitlyDotNet</PackageId>
