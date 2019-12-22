@@ -1,9 +1,10 @@
-name: .NET Core
+name: Publish NuGet
 
 on: 
-  pull_request:
-    branches: 
-    - master
+  #pull_request:
+  #  branches: 
+  #  - master
+  ['deployment']
 
 jobs:
   build:
