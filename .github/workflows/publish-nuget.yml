@@ -54,7 +54,7 @@ jobs:
           uses: actions/setup-dotnet@master
           with:
             dotnet-version: '3.1.100'
-            source-url: https://api.nuget.org/v3/index.json
+            source-url: https://www.nuget.org/api/v2/package
           env:
             NUGET_AUTH_TOKEN: ${{ secrets.NUGET_ORG_TOKEN }} 
 
