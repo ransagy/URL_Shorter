@@ -59,4 +59,6 @@ jobs:
             NUGET_AUTH_TOKEN: ${{ secrets.NUGET_ORG_TOKEN }} 
 
         - name: Push to NuGet.org (using dotnet)
-          run: dotnet nuget push --skip-duplicate -k $NUGET_AUTH_TOKEN nupkg/*.nupkg
+          env:
+            NUGET_AUTH_TOKEN: ${{ secrets.NUGET_ORG_TOKEN }} 
+          run: dotnet nuget push nupkg/*.nupkg -k $NUGET_AUTH_TOKEN --skip-duplicate
